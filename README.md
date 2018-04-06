@@ -1,8 +1,7 @@
 # split_words
 Code that inserts spaces in arbitrary string using dictionary of all possible words.
 
-This exercise is frequently asked to be implemented during coding part of the SDE interview.
-Implementation in this repo is much more sophisticated though. It covers:
+Implementation covers:
 
 * Preparation of english vocabulary of most frequent words with probabilities.
 * Efficient implementation, that works for really long inputs.
@@ -63,7 +62,7 @@ Vocabulary size  | WER, %
 ## TODO
 Some thoughts on how to improve the code and algo, but since it already works, I was lazy to do so.
 
-* Current vocabulury is essentially 1-gram language model. Incorporating n-grams of higher orders would improve the performance.
+* Current vocabulary is essentially 1-gram language model. Incorporating n-grams of higher orders would improve the performance.
 * Currently the probability of the sequence is a sum of log-probs of separate words. That leads to P(rare\_long\_word) < P(short\_word1) + P(short\_word2)
 * Sometimes for long text, all the hypothesis might be pruned out. That is because before adding next word, the subword does not decrease overall hypothesis probability. The issue can be also treated by increasing the trellis width, although it makes algo slower.
 
